@@ -29,6 +29,24 @@ public class MainActivity extends AppCompatActivity {
         checkStart.setOnCheckedChangeListener(checkListener);
 
     }
+    View.OnClickListener btnListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (rg.getCheckedRadioButtonId()) {
+                case R.id.rb_dog:
+                    imgv.setImageResource(R.drawable.dog);
+                    break;
+                case R.id.rb_cat:
+                    imgv.setImageResource(R.drawable.cat);
+                    break;
+                case R.id.rb_rabbit:
+                    imgv.setImageResource(R.drawable.rabbit);
+                    break;
+            }
+        }
+    };
+
+
     CompoundButton.OnCheckedChangeListener checkListener = new CompoundButton.OnCheckedChangeListener(){
         @Override
         public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
@@ -38,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
             else{
                 LinearSub.setVisibility(View.INVISIBLE);
             }
-
         }
     };
 }
